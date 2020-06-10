@@ -24,10 +24,10 @@
     "react-scripts": "3.2.0",
     "reactstrap": "^8.0.1",
     "styled-components": "^4.4.0",
-    "typescript": "3.6.3"
+    "typescript": "^3.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=31999 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

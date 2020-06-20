@@ -55,13 +55,14 @@ static_resources:
                               cluster: rating_grpc_service,
                               max_grpc_timeout: 0s,
                             }
-                      cors:
-                        allow_origin:
-                          - "*"
+                      cors: 
+                        allow_origin_string_match: 
+                          - safe_regex: 
+                              google_re2: {}
+                              regex: \*
                         allow_methods: GET, PUT, DELETE, POST, OPTIONS
                         allow_headers: keep-alive,user-agent,cache-control,content-type,content-transfer-encoding,x-accept-content-transfer-encoding,x-accept-response-streaming,x-user-agent,x-grpc-web,grpc-timeout
                         max_age: "1728000"
-                        enabled: true
                 http_filters:
                   - name: envoy.grpc_json_transcoder
                     config:
@@ -95,7 +96,7 @@ static_resources:
       lb_policy: round_robin
       hosts:
         - socket_address:
-            address: graphql-service
+            address: graphql-server
             port_value: 5011
     - name: catalog_grpc_service
       connect_timeout: 0.25s
@@ -108,12 +109,12 @@ static_resources:
             port_value: 5002
     - name: cart_grpc_service
       connect_timeout: 0.25s
-      type: logical_dns
+      type: static
       lb_policy: round_robin
       http2_protocol_options: {}
       hosts:
         - socket_address:
-            address: cart-service
+            address: 192.168.1.5
             port_value: 5003
     - name: inventory_grpc_service
       connect_timeout: 0.25s

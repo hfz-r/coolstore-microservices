@@ -8,7 +8,7 @@ export class AuthService {
       authority: `${process.env.REACT_APP_AUTHORITY}`,
       client_id: 'backoffice',
       redirect_uri: `${process.env.REACT_APP_ROOT_URL}/signin-callback.html`,
-      //silent_redirect_uri: `${process.env.REACT_APP_ROOT_URL}/silent-renew.html`,
+      silent_redirect_uri: `${process.env.REACT_APP_ROOT_URL}/silent-renew.html`,
       post_logout_redirect_uri: `${process.env.REACT_APP_ROOT_URL}`,
       response_type: 'id_token token',
       scope: 'inventory_api_scope cart_api_scope catalog_api_scope rating_api_scope openid profile'
@@ -19,7 +19,7 @@ export class AuthService {
     Log.level = Log.INFO
   }
 
-  public getUser = async (): Promise<User> => {
+  public getUser = async (): Promise<User | null> => {
     return await this.userManager.getUser()
   }
 

@@ -24,7 +24,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-if="items" v-for="(product, id, index) in items">
+              <tr v-if="items" v-for="(product, id, index) in items" :key="id">
                 <th>
                   <img
                     class="media-object"

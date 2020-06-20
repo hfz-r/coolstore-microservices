@@ -7,7 +7,7 @@ using static tanka.graphql.Parser;
 
 namespace VND.CoolStore.Services.GraphQL.v1
 {
-    [Route("api/graphql")]
+    [Route("gql/api/graphql")]
     public class QueryController : Controller
     {
         private readonly CoolStoreSchema _schema;

@@ -197,7 +197,7 @@ namespace VND.CoolStore.Services.GraphQL
                       var path = context.HttpContext.Request.Path;
 
                       if (!string.IsNullOrEmpty(accessToken) &&
-                                (path.StartsWithSegments("/graphql")))
+                                (path.StartsWithSegments("/gql/graphql")))
                       {
                         context.Token = accessToken;
                       }

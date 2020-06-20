@@ -4,7 +4,7 @@ import * as chalk from 'chalk'
 export default Pino({
   name: 'catalog-service',
   messageKey: 'message',
-  changeLevelName: 'severity',
+  // changeLevelName: 'severity',
   useLevelLabels: true
 })
 

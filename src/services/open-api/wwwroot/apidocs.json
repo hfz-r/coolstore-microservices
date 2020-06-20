@@ -718,8 +718,8 @@
     "OAuth2": {
       "type": "oauth2",
       "flow": "implicit",
-      "authorizationUrl": "http://localhost:5001/connect/authorize",
-      "tokenUrl": "http://localhost:5001/connect/token",
+      "authorizationUrl": "http://localhost:8083/connect/authorize",
+      "tokenUrl": "http://localhost:8083/connect/token",
       "scopes": {
         "cart_api_scope": "Grants cart access",
         "catalog_api_scope": "Grants catalog access",

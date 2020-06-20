@@ -15,7 +15,7 @@ const client = async () => {
     accessTokenFactory: () => (user != null && user.access_token != null ? user.access_token : '')
   }
 
-  const serverClient = new TankaClient(`${process.env.REACT_APP_GRAPHQL_ENDPOINT}/graphql`, options)
+  const serverClient = new TankaClient(`${process.env.REACT_APP_GRAPHQL_ENDPOINT}/gql/graphql`, options)
   const serverLink = new TankaLink(serverClient)
 
   return new ApolloClient({

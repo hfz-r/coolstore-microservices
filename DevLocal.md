@@ -17,7 +17,7 @@ Now you can develop the application on Visual Studio or Visual Code.
 # Up and running on Docker Compose
 
 ```bash
-$ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+$ docker-compose -f docker-compose.base.yml -f docker-compose.base.override.yml -f docker-compose.yml -f docker-compose.override.yml up -d
 ```
 
 # Up and running on Kubernetes and Service Mesh
